@@ -1,0 +1,40 @@
+#Brithany Sanchez
+#Period 1-2
+#12/02/2024
+
+import simplegui
+
+# Draw handler function
+def draw(canvas):
+    # Draw's the turkey's body
+    canvas.draw_circle((300, 250), 60, 2, "black", "brown")
+    
+    # Draw's the turkey's head
+    canvas.draw_circle((300, 180), 30, 2, "black", "Brown")
+    
+    # Draw's the turkey's eyes
+    canvas.draw_circle((290, 175), 5, 1, "Black", "White")
+    canvas.draw_circle((310, 175), 5, 1, "Black", "White")
+
+    # Draw's the turkey's beak
+    canvas.draw_polygon([(300, 185), (320, 195), (300, 195)], 1, "Black", "Orange")
+    
+    # Draw the turkey's wattle
+    canvas.draw_circle((300, 200), 10, 1, "Red", "Red")
+    
+    # Draw's the feathers 
+    canvas.draw_polygon([(240, 250), (260, 180), (280, 250)], 6, "Black", "Orange")
+    canvas.draw_polygon([(360, 250), (340, 180), (320, 250)], 6, "Black", "Orange")
+    
+    # Draw's the grass
+    canvas.draw_polygon([(0, 400), (600, 400), (600, 400)], 220, "Green", "Lawngreen")
+    
+    
+# Frame setup
+frame = simplegui.create_frame("Thanksgiving Drawing", 600, 400)
+#We set the background here
+frame.set_canvas_background("rgb(135,206,235)")
+# Assign draw handler to the frame
+frame.set_draw_handler(draw)
+# Start the frame
+frame.start()
